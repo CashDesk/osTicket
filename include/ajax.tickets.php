@@ -682,9 +682,6 @@ class TicketsAjaxAPI extends AjaxController {
                         if (strlen($clean) > 200)
                              $clean = Format::truncate($clean, 200);
                         break;
-                    case $field instanceof BooleanField:
-                        $clean = $field->toString($field->getClean());
-                        break;
                     default:
                         $clean =  $field->getClean();
                         $clean = is_array($clean) ? implode($clean, ',') :
